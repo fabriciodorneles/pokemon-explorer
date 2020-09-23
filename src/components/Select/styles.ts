@@ -5,7 +5,7 @@ interface IContainerProps {
     isFilled: boolean;
 }
 
-export const Container = styled.div<IContainerProps>`
+export const ContainerSelect = styled.div<IContainerProps>`
     display: flex;
     align-items: center;
 
@@ -15,9 +15,10 @@ export const Container = styled.div<IContainerProps>`
     width: 100%;
     font-size: 16px;
     height: 40px;
+    margin-left: 8px;
 
-    & + .input {
-        margin-top: 18px;
+    & + div {
+        margin-top: 0px;
         @media (max-width: 450px) {
             margin-top: 12px;
         }
@@ -43,7 +44,7 @@ export const Container = styled.div<IContainerProps>`
             color: #ff9000;
         `}
 
-  input {
+  select {
         flex: 1;
         background: transparent;
         border: 0;

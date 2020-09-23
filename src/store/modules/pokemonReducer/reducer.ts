@@ -67,6 +67,48 @@ const pokemonReducer: Reducer<IPokemonState> = (
                 draft.currentPokemonList = updatedPokemonList;
                 break;
             }
+            case ActionTypes.searchPokemons: {
+                const { formData } = action.payload;
+                switch (formData.type) {
+                    case 'name': {
+                        draft.currentPokemonList = state.totalPokemonList.filter(
+                            (pokemon) =>
+                                pokemon.name
+                                    .toLowerCase()
+                                    .includes(formData.content.toLowerCase()),
+                        );
+                        break;
+                    }
+                    case 'type': {
+                        draft.currentPokemonList = state.totalPokemonList.filter(
+                            (pokemon) => {
+                                let hasType = false;
+                                pokemon.types.map((type) => {
+                                    if (
+                                        type
+                                            .toLowerCase()
+                                            .includes(
+                                                formData.content.toLowerCase(),
+                                            )
+                                    )
+                                        hasType = true;
+                                    return hasType;
+                                });
+                                if (hasType) return true;
+                                return false;
+                            },
+                        );
+                        break;
+                    }
+                    default: {
+                        break;
+                    }
+                }
+                // draft.currentPokemon = pokemon;
+                // draft.totalPokemonList = updatedPokemonList;
+                // draft.currentPokemonList = updatedPokemonList;
+                break;
+            }
             default: {
                 return draft;
             }

@@ -14,7 +14,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-body, input, button {
+body, input, button, select {
     font-family: 'Righteous', serif;
     font-size: 16px;
 }

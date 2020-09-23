@@ -1,4 +1,42 @@
 import styled from 'styled-components';
+import { Form as Unform } from '@unform/web';
+
+export const Form = styled(Unform)`
+    display: flex;
+    align-items: center;
+    max-height: 100vh;
+
+    input {
+        padding: 0 12px;
+        height: 40px;
+        border: 0;
+        border-radius: 8px;
+    }
+    button {
+        margin-left: 16px;
+        font-family: 'Roboto';
+        color: #000;
+        font-weight: 600;
+        border-radius: 8px;
+        border: 0;
+        background: #b3a125;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .text {
+            padding: 10px 24px;
+        }
+
+        .icon {
+            display: flex;
+            padding: 12px 12px;
+            background: #41c900;
+            border-radius: 0 8px 8px 0;
+            margin: 0 auto;
+        }
+    }
+`;
 
 export const Container = styled.div`
     display: flex;
@@ -16,23 +54,24 @@ export const Header = styled.div`
 `;
 
 export const HeaderContent = styled.div`
-    max-width: 1120px;
     display: flex;
+    flex: 1;
+    flex-direction: column;
     align-items: center;
     flex: 1 0 auto;
+    justify-content: center;
     @media (max-width: 1260px) {
-        justify-content: center;
+    }
+
+    > h1 {
+        font-weight: 700px;
+        margin-left: 12px;
+        margin-top: -40px;
+        margin-bottom: 20px;
+        color: #000;
     }
 
     > img {
-        @media (min-width: 1260px) {
-            display: flex;
-            margin-left: 20px;
-            margin-top: -18px;
-            margin-bottom: -61px;
-            position: relative;
-            height: 276px;
-        }
         display: flex;
         height: 180px;
         position: relative;
@@ -46,7 +85,7 @@ export const HeaderContent = styled.div`
 export const MenuBar = styled.div`
     background: #cc0000;
     color: #000;
-    height: 22%;
+    height: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,7 +109,7 @@ export const MenuBar = styled.div`
 
 export const Content = styled.main`
     max-width: 1120px;
-    margin-top: 24px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;

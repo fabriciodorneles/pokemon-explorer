@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 
-import { ActionTypes, IPokemon } from './types';
+import { ActionTypes, IPokemon, SearchPokemonsFormData } from './types';
 
 export function initializeState(pokemonList: IPokemon[]) {
     return {
@@ -23,6 +23,14 @@ export function editPokemon(pokemon: IPokemon) {
         type: ActionTypes.editPokemon,
         payload: {
             pokemon,
+        },
+    };
+}
+export function searchPokemons(formData: SearchPokemonsFormData) {
+    return {
+        type: ActionTypes.searchPokemons,
+        payload: {
+            formData,
         },
     };
 }

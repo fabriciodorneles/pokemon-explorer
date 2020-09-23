@@ -150,7 +150,7 @@ const ModalEditPokemon: React.FC<IModalProps> = ({
                     </div>
                 </div>
                 <button type="submit">
-                    <div className="text">Editar Produto</div>
+                    <div className="text">Confirmar Edição</div>
                     <div className="icon">
                         <FiCheckSquare size={24} />
                     </div>

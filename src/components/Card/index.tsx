@@ -11,7 +11,7 @@ interface IProps {
     pokemon: IPokemon;
 }
 
-const Product: React.FC<IProps> = ({ pokemon }: IProps) => {
+const Card: React.FC<IProps> = ({ pokemon }: IProps) => {
     const dispatch = useDispatch();
 
     function setPokemon(): void {
@@ -48,4 +48,4 @@ const Product: React.FC<IProps> = ({ pokemon }: IProps) => {
     );
 };
 
-export default Product;
+export default Card;

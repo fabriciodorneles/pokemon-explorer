@@ -1,23 +1,28 @@
 import React, {
-    InputHTMLAttributes,
     useEffect,
     useRef,
     useState,
     useCallback,
+    SelectHTMLAttributes,
 } from 'react';
 
 import { IconBaseProps } from 'react-icons';
 import { useField } from '@unform/core';
 
-import { Container } from './styles';
+import { ContainerSelect } from './styles';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface ISelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
     name: string;
     icon?: React.ComponentType<IconBaseProps>;
 }
 
-const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
-    const inputRef = useRef<HTMLInputElement>(null);
+const Select: React.FC<ISelectProps> = ({
+    name,
+    icon: Icon,
+    children,
+    ...rest
+}) => {
+    const selectRef = useRef<HTMLSelectElement>(null);
 
     const [isFocused, setIsFocused] = useState(false);
     const [isFilled, setIsFilled] = useState(false);
@@ -31,30 +36,32 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
     const handleInputBlur = useCallback(() => {
         setIsFocused(false);
 
-        setIsFilled(!!inputRef.current?.value);
+        setIsFilled(!!selectRef.current?.value);
     }, []);
 
     useEffect(() => {
         registerField({
             name: fieldName,
-            ref: inputRef.current,
+            ref: selectRef.current,
             path: 'value',
         });
     }, [fieldName, registerField]);
 
     return (
-        <Container className="input" isFilled={isFilled} isFocused={isFocused}>
+        <ContainerSelect isFilled={isFilled} isFocused={isFocused}>
             {Icon && <Icon size={20} />}
 
-            <input
+            <select
                 onFocus={handleInputFocus}
                 onBlur={handleInputBlur}
                 defaultValue={defaultValue}
-                ref={inputRef}
+                ref={selectRef}
                 {...rest}
-            />
-        </Container>
+            >
+                {children}
+            </select>
+        </ContainerSelect>
     );
 };
 
-export default Input;
+export default Select;

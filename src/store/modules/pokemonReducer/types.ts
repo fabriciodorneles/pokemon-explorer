@@ -2,9 +2,12 @@ export enum ActionTypes {
     initializeState = 'INITIALIZE_STATE',
     goToDetailsPage = 'GO_TO_DETAILS_PAGE',
     editPokemon = 'EDIT_POKEMON',
-    addProductToCartRequest = 'ADD_PRODUCT_TO_CART_REQUEST',
-    addProductToCartSuccess = 'ADD_PRODUCT_TO_CART_SUCCESS',
-    addProductToCartFailure = 'ADD_PRODUCT_TO_CART_FAILURE',
+    searchPokemons = 'SEARCH_POKEMONS',
+}
+
+export interface SearchPokemonsFormData {
+    content: string;
+    type: string;
 }
 
 export interface Attack {
