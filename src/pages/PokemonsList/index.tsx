@@ -22,7 +22,7 @@ import Input from '../../components/Input';
 import Select from '../../components/Select';
 import { searchPokemons } from '../../store/modules/pokemonReducer/actions';
 
-const Dashboard: React.FC = () => {
+const PokemonsList: React.FC = () => {
     const dispatch = useDispatch();
 
     const formRef = useRef<FormHandles>(null);
@@ -69,13 +69,9 @@ const Dashboard: React.FC = () => {
                 <h1>POKEMONS</h1>
                 <Section>
                     <ProductsContainer data-testid="products-list">
-                        {poke ? (
-                            poke.map((product) => (
-                                <Card key={product.id} pokemon={product} />
-                            ))
-                        ) : (
-                            <h1>LOADING...</h1>
-                        )}
+                        {poke.map((product) => (
+                            <Card key={product.id} pokemon={product} />
+                        ))}
                     </ProductsContainer>
                 </Section>
             </Content>
@@ -83,4 +79,4 @@ const Dashboard: React.FC = () => {
     );
 };
 
-export default Dashboard;
+export default PokemonsList;

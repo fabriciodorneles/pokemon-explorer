@@ -8,8 +8,6 @@ import { IPokemon } from '../../store/modules/pokemonReducer/types';
 import ModalEditPokemon from '../../components/ModalEditPokemon';
 import { editPokemon } from '../../store/modules/pokemonReducer/actions';
 
-// import useWindowDimensions from '../../hooks/useWindowDimensions';
-
 interface IProduct {
     id: string;
     name: string;
@@ -22,12 +20,11 @@ interface IProduct {
 const PokemonDetails: React.FC = () => {
     const [editModalOpen, setEditModalOpen] = useState(false);
     const dispatch = useDispatch();
-
     const selectedPokemon = useSelector<IState, IPokemon>(
         (state) => state.pokemonReducer.currentPokemon,
     );
 
-    async function handleUpdateProduct(pokemon: IPokemon): Promise<void> {
+    async function handleUpdatePokemon(pokemon: IPokemon): Promise<void> {
         pokemon.id = selectedPokemon.id;
         dispatch(editPokemon(pokemon));
     }
@@ -40,15 +37,16 @@ const PokemonDetails: React.FC = () => {
             <Header>
                 <HeaderContent>
                     <Link to="/">
-                        <img src={logoImg} alt="EFeira" />
+                        <img src={logoImg} alt="Pokemon" />
                     </Link>
                 </HeaderContent>
             </Header>
             <ModalEditPokemon
                 isOpen={editModalOpen}
                 setIsOpen={toggleEditModal}
-                editingProduct={selectedPokemon}
-                handleUpdateProduct={handleUpdateProduct}
+                editingPokemon={selectedPokemon}
+                handleUpdatePokemon={handleUpdatePokemon}
+                data-testid="pokemon-edit"
             />
             <Content>
                 <div className="pokemonCard">
@@ -73,7 +71,7 @@ const PokemonDetails: React.FC = () => {
                             <h2>Type</h2>
                             <div className="attackList">
                                 {selectedPokemon.types.map((type) => (
-                                    <h3>{type}</h3>
+                                    <h3 key={type}>{type}</h3>
                                 ))}
                             </div>
                         </div>

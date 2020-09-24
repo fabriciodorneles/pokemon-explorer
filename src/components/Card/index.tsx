@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { goToDetailsPage } from '../../store/modules/pokemonReducer/actions';
@@ -19,7 +18,7 @@ const Card: React.FC<IProps> = ({ pokemon }: IProps) => {
     }
 
     return (
-        <Container>
+        <Container data-testid="card-container">
             <header>
                 <img src={pokemon.image} alt={pokemon.name} />
             </header>
@@ -39,7 +38,7 @@ const Card: React.FC<IProps> = ({ pokemon }: IProps) => {
                             className="icon"
                             onClick={setPokemon}
                         >
-                            <p> DETALHES / EDITAR </p>
+                            <p>DETALHES / EDITAR</p>
                         </button>
                     </Link>
                 </div>

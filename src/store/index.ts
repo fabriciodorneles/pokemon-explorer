@@ -1,4 +1,4 @@
-import { applyMiddleware, createStore } from 'redux';
+import { createStore } from 'redux';
 import { IPokemonState } from './modules/pokemonReducer/types';
 
 import rootreducer from './modules/rootreducer';

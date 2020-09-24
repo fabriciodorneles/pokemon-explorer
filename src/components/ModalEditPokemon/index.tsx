@@ -6,8 +6,6 @@ import { Form } from './styles';
 import Modal from '../Modal';
 import Input from '../Input';
 import { IPokemon } from '../../store/modules/pokemonReducer/types';
-import Input50 from '../Input50';
-import Input30 from '../Input30';
 
 interface IProduct {
     id: number;
@@ -21,24 +19,24 @@ interface IProduct {
 interface IModalProps {
     isOpen: boolean;
     setIsOpen: () => void;
-    handleUpdateProduct: (product: IPokemon) => void;
-    editingProduct: IPokemon;
+    handleUpdatePokemon: (pokemon: IPokemon) => void;
+    editingPokemon: IPokemon;
 }
 
 const ModalEditPokemon: React.FC<IModalProps> = ({
     isOpen,
     setIsOpen,
-    editingProduct,
-    handleUpdateProduct,
+    editingPokemon,
+    handleUpdatePokemon,
 }) => {
     const formRef = useRef<FormHandles>(null);
 
     const handleSubmit = useCallback(
         async (data: IPokemon) => {
-            handleUpdateProduct(data);
+            handleUpdatePokemon(data);
             setIsOpen();
         },
-        [handleUpdateProduct, setIsOpen],
+        [handleUpdatePokemon, setIsOpen],
     );
 
     return (
@@ -46,56 +44,60 @@ const ModalEditPokemon: React.FC<IModalProps> = ({
             <Form
                 ref={formRef}
                 onSubmit={handleSubmit}
-                initialData={editingProduct}
+                initialData={editingPokemon}
             >
                 <h1>Editar Pokemon</h1>
                 <Input
                     name="image"
-                    placeholder="Cole um link da imagem do produto"
+                    placeholder="Cole um link da imagem do Pokemon"
                 />
                 <Input name="name" placeholder="Nome do Pokemon" />
                 <div className="typesContainer">
                     <h3>Types</h3>
                     <div className="types">
-                        <Input50
-                            className="typeInput"
-                            name="types[0]"
-                            placeholder="Tipo 1"
-                        />
-                        <Input50
-                            className="typeInput"
-                            name="types[1]"
-                            placeholder="Tipo 2"
-                        />
+                        <div className="attack">
+                            <Input
+                                className="typeInput"
+                                name="types[0]"
+                                placeholder="Type 1"
+                            />
+                        </div>
+                        <div className="attack">
+                            <Input
+                                className="typeInput"
+                                name="types[1]"
+                                placeholder="Type 2"
+                            />
+                        </div>
                     </div>
                 </div>
                 <div className="typesContainer">
                     <h3>Fast Attacks</h3>
                     <div className="types">
                         <div className="attack">
-                            <Input30
+                            <Input
                                 name="attacks.fast[0].name"
-                                placeholder="Name"
+                                placeholder="Fast Attack 1"
                             />
-                            <Input30
+                            <Input
                                 name="attacks.fast[0].type"
                                 placeholder="Type"
                             />
-                            <Input30
+                            <Input
                                 name="attacks.fast[0].damage"
                                 placeholder="Damage"
                             />
                         </div>
                         <div className="attack">
-                            <Input30
+                            <Input
                                 name="attacks.fast[1].name"
                                 placeholder="Fast Attack 2"
                             />
-                            <Input30
+                            <Input
                                 name="attacks.fast[1].type"
                                 placeholder="Type"
                             />
-                            <Input30
+                            <Input
                                 name="attacks.fast[1].damage"
                                 placeholder="Damage"
                             />
@@ -106,43 +108,43 @@ const ModalEditPokemon: React.FC<IModalProps> = ({
                     <h3>Special Attacks</h3>
                     <div className="types">
                         <div className="attack">
-                            <Input30
+                            <Input
                                 name="attacks.special[0].name"
-                                placeholder="Name"
+                                placeholder="Special Attack 1"
                             />
-                            <Input30
+                            <Input
                                 name="attacks.special[0].type"
                                 placeholder="Type"
                             />
-                            <Input30
+                            <Input
                                 name="attacks.special[0].damage"
                                 placeholder="Damage"
                             />
                         </div>
                         <div className="attack">
-                            <Input30
+                            <Input
                                 name="attacks.special[1].name"
-                                placeholder="special Attack 2"
+                                placeholder="Special Attack 2"
                             />
-                            <Input30
+                            <Input
                                 name="attacks.special[1].type"
                                 placeholder="Type"
                             />
-                            <Input30
+                            <Input
                                 name="attacks.special[1].damage"
                                 placeholder="Damage"
                             />
                         </div>
                         <div className="attack">
-                            <Input30
+                            <Input
                                 name="attacks.special[2].name"
-                                placeholder="special Attack 2"
+                                placeholder="Special Attack 3"
                             />
-                            <Input30
+                            <Input
                                 name="attacks.special[2].type"
                                 placeholder="Type"
                             />
-                            <Input30
+                            <Input
                                 name="attacks.special[2].damage"
                                 placeholder="Damage"
                             />

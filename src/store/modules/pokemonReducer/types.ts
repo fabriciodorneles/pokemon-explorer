@@ -10,15 +10,15 @@ export interface SearchPokemonsFormData {
     type: string;
 }
 
-export interface Attack {
+export interface IAttack {
     name: string;
     type: string;
     damage: number;
 }
 
-export interface Attacks {
-    fast: Attack[];
-    special: Attack[];
+export interface IAttacks {
+    fast: IAttack[];
+    special: IAttack[];
 }
 
 export interface IPokemon {
@@ -26,7 +26,7 @@ export interface IPokemon {
     name: string;
     image: string;
     types: string[];
-    attacks: Attacks;
+    attacks: IAttacks;
     __typename: string;
 }
 

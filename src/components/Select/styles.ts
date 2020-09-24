@@ -1,11 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-interface IContainerProps {
-    isFocused: boolean;
-    isFilled: boolean;
-}
-
-export const ContainerSelect = styled.div<IContainerProps>`
+export const ContainerSelect = styled.div`
     display: flex;
     align-items: center;
 
@@ -31,20 +26,7 @@ export const ContainerSelect = styled.div<IContainerProps>`
         line-height: 36px;
     }
 
-    ${(props) =>
-        props.isFocused &&
-        css`
-            color: #ff9000;
-            border-color: #ff9000;
-        `}
-
-    ${(props) =>
-        props.isFilled &&
-        css`
-            color: #ff9000;
-        `}
-
-  select {
+    select {
         flex: 1;
         background: transparent;
         border: 0;
@@ -53,9 +35,5 @@ export const ContainerSelect = styled.div<IContainerProps>`
         &::placeholder {
             color: #b7b7cc;
         }
-    }
-
-    svg {
-        margin-right: 16px;
     }
 `;

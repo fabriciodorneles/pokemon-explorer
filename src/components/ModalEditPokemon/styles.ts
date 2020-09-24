@@ -22,6 +22,10 @@ export const Form = styled(Unform)`
         display: flex;
         flex-direction: column;
         text-align: center;
+        margin-top: 16px;
+        & + .typesContainer {
+            margin-top: 0px;
+        }
         .attack {
             display: flex;
             flex-direction: column;
@@ -33,7 +37,7 @@ export const Form = styled(Unform)`
         }
     }
     .types {
-        margin: 0px 0px 16px 0px;
+        margin: 16px 0px 16px 0px;
         display: flex;
         flex-direction: row;
         justify-content: center;

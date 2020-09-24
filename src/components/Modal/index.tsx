@@ -2,17 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { StyledModal } from './styles';
 
-interface IFoodPlate {
-    id: number;
-    name: string;
-    image: string;
-    price: string;
-    description: string;
-    available: boolean;
-}
-
 interface IModalProps {
-    children: any;
     isOpen: boolean;
     setIsOpen: () => void;
 }
@@ -26,6 +16,7 @@ const Modal: React.FC<IModalProps> = ({ children, isOpen, setIsOpen }) => {
 
     return (
         <StyledModal
+            data-testid="modal-container"
             shouldCloseOnOverlayClick={!false}
             onRequestClose={setIsOpen}
             isOpen={modalStatus}
