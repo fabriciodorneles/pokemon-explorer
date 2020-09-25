@@ -79,7 +79,10 @@ const PokemonDetails: React.FC = () => {
                             <h2>Fast Attacks</h2>
                             <div className="attackList">
                                 {selectedPokemon.attacks.fast.map((attack) => (
-                                    <div className="attackContainer">
+                                    <div
+                                        key={attack.name}
+                                        className="attackContainer"
+                                    >
                                         <h3>{attack.name}</h3>
                                         <h3>{attack.type}</h3>
                                         <h3>{attack.damage}</h3>
@@ -92,7 +95,10 @@ const PokemonDetails: React.FC = () => {
                             <div className="attackList">
                                 {selectedPokemon.attacks.special.map(
                                     (attack) => (
-                                        <div className="attackContainer">
+                                        <div
+                                            key={attack.name}
+                                            className="attackContainer"
+                                        >
                                             <h3>{attack.name}</h3>
                                             <h3>{attack.type}</h3>
                                             <h3>{attack.damage}</h3>

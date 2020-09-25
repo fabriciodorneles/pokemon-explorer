@@ -1,37 +1,8 @@
 import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import PokemonsList from '../../pages/PokemonsList';
 import { IPokemon } from '../../store/modules/pokemonReducer/types';
 
-// const mockSelector = jest.fn(() => {
-//     const pokemon: IPokemon[] = [
-//         {
-//             id: '1',
-//             name: 'Charmeleon',
-//             image: 'imageAdress',
-//             types: ['Fire', 'Fly'],
-//             attacks: {
-//                 fast: [
-//                     {
-//                         name: 'attack1',
-//                         type: 'tipo1',
-//                         damage: 10,
-//                     },
-//                 ],
-//                 special: [
-//                     {
-//                         name: 'attack1',
-//                         type: 'tipo1',
-//                         damage: 10,
-//                     },
-//                 ],
-//             },
-//             __typename: 'qualquer',
-//         },
-//     ];
-//     return pokemon;
-// });
 const mockDispatch = jest.fn();
 jest.mock('react-redux', () => ({
     useDispatch: () => mockDispatch,
