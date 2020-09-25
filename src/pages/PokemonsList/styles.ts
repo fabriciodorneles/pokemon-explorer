@@ -15,7 +15,7 @@ export const Form = styled(Unform)`
     button {
         margin-left: 16px;
         font-family: 'Roboto';
-        color: #000;
+        color: #4e4e4e;
         font-weight: 600;
         border-radius: 8px;
         border: 0;

@@ -38,7 +38,7 @@ const Card: React.FC<IProps> = ({ pokemon }: IProps) => {
                             className="icon"
                             onClick={setPokemon}
                         >
-                            <p>DETALHES / EDITAR</p>
+                            DETALHES / EDITAR
                         </button>
                     </Link>
                 </div>

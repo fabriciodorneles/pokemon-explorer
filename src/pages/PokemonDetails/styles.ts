@@ -75,7 +75,7 @@ export const HeaderContent = styled.div`
 `;
 
 export const Content = styled.main`
-    margin-top: 20px;
+    margin-top: 40px;
 
     display: flex;
     flex-direction: row;

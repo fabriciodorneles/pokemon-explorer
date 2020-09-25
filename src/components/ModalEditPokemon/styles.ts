@@ -83,6 +83,7 @@ export const Form = styled(Unform)`
     button {
         align-self: flex-end;
         margin-top: 16px;
+        margin-bottom: 24px;
         font-family: 'Roboto';
         color: #ffde00;
         font-weight: 600;

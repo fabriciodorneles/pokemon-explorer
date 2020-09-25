@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { shade } from 'polished';
 
 export const Container = styled.div`
     background: #3b4cca;
@@ -121,34 +122,29 @@ export const Container = styled.div`
             flex: 1;
             justify-content: center;
 
-            button {
+            .icon {
                 font-family: 'Roboto';
+                background: #b3a125;
+                color: #4e4e4e;
+                height: 40px;
+                border-radius: 6px;
+                border: 0;
+                padding: 10px 0px;
+                width: 170px;
                 font-weight: 700;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                background: #c4c4c4;
+                font-size: 14px;
+                transition: background-color 0.2s;
 
-                padding: 8px;
-                border-radius: 8px;
-                border: none;
-                transition: 0.1s;
-
-                p {
-                    margin: 0px 0px 0px 4px;
-                    color: #3d3d4d;
-                    font-size: 14px;
-                }
-
-                & + button {
-                    margin-left: 8px;
+                &:hover {
+                    background: ${shade(0.2, '#4e4e4e')};
+                    color: #ffde00;
                 }
 
                 @media (max-width: 470px) {
-                    flex-direction: column;
-                    p {
-                        font-size: 8px;
-                    }
+                    width: 120px;
+                    height: 28px;
+                    padding: 5px;
+                    font-size: 11px;
                 }
             }
         }
