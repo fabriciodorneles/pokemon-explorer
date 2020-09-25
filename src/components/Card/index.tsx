@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { goToDetailsPage } from '../../store/modules/pokemonReducer/actions';
+import { selectPokemon } from '../../store/modules/pokemonReducer/actions';
 import { IPokemon } from '../../store/modules/pokemonReducer/types';
 
 import { Container } from './styles';
@@ -14,7 +14,7 @@ const Card: React.FC<IProps> = ({ pokemon }: IProps) => {
     const dispatch = useDispatch();
 
     function setPokemon(): void {
-        dispatch(goToDetailsPage(pokemon.id));
+        dispatch(selectPokemon(pokemon.id));
     }
 
     return (

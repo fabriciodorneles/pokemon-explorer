@@ -15,7 +15,7 @@ jest.mock('@unform/core', () => {
     };
 });
 
-describe('Input Component', () => {
+describe('Select Component', () => {
     it('should be able to render select', () => {
         const { debug } = render(<Select name="Name" />);
 

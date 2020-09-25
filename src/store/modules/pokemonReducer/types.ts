@@ -1,8 +1,9 @@
 export enum ActionTypes {
     initializeState = 'INITIALIZE_STATE',
-    goToDetailsPage = 'GO_TO_DETAILS_PAGE',
-    editPokemon = 'EDIT_POKEMON',
+    selectPokemon = 'SELECT_POKEMON',
+    updatePokemon = 'UPDATE_POKEMON',
     searchPokemons = 'SEARCH_POKEMONS',
+    voidAction = 'VOID_ACTION',
 }
 
 export interface SearchPokemonsFormData {

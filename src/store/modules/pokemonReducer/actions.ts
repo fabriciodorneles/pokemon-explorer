@@ -10,17 +10,17 @@ export function initializeState(pokemonList: IPokemon[]) {
         },
     };
 }
-export function goToDetailsPage(pokemonId: string) {
+export function selectPokemon(pokemonId: string) {
     return {
-        type: ActionTypes.goToDetailsPage,
+        type: ActionTypes.selectPokemon,
         payload: {
             pokemonId,
         },
     };
 }
-export function editPokemon(pokemon: IPokemon) {
+export function updatePokemon(pokemon: IPokemon) {
     return {
-        type: ActionTypes.editPokemon,
+        type: ActionTypes.updatePokemon,
         payload: {
             pokemon,
         },

@@ -10,11 +10,18 @@ export const Container = styled.div`
     width: 100%;
     font-size: 16px;
     height: 40px;
+    @media (max-width: 760px) {
+        padding: 8px 12px;
+    }
+    @media (max-width: 450px) {
+        height: 30px;
+        padding: 8px 12px;
+    }
 
     & + .input {
         margin-top: 18px;
         @media (max-width: 450px) {
-            margin-top: 12px;
+            margin-top: 4px;
         }
     }
 

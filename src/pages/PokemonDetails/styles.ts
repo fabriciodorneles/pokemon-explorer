@@ -8,6 +8,9 @@ export const Container = styled.div`
     align-items: center;
     background: #ffde00;
     padding-bottom: 40px;
+    border-radius: 8px;
+    @media (max-width: 850px) {
+    }
 `;
 
 export const Header = styled.div`
@@ -16,14 +19,40 @@ export const Header = styled.div`
     height: 240px;
     display: flex;
     flex-direction: column;
+    @media (max-width: 850px) {
+        height: 120px;
+    }
 `;
 
 export const HeaderContent = styled.div`
-    margin: 0px 20px;
+    margin: -40px 20px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     flex: 1 0 auto;
+    .back {
+        padding: 4px;
+        border-radius: 4px;
+        margin-top: -40px;
+        .voltar {
+            font-family: 'Roboto';
+            background: #b3a125;
+            color: #000;
+            height: 35px;
+            border-radius: 6px;
+            border: 0;
+            padding: 10px;
+            width: 100px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: background-color 0.2s;
+
+            &:hover {
+                background: ${shade(0.2, '#378d3e')};
+            }
+        }
+    }
     @media (max-width: 580px) {
         margin: 0px 10px;
     }
@@ -36,12 +65,11 @@ export const HeaderContent = styled.div`
             height: 230px;
         }
         display: flex;
-        height: 180px;
+        height: 150px;
         position: relative;
 
         @media (max-width: 580px) {
             margin-left: -10px;
-            height: 150px;
         }
     }
 `;
@@ -123,9 +151,11 @@ export const Content = styled.main`
                 background: #378d3e;
                 padding: 12px;
                 border-radius: 8px;
-                margin-left: 12px;
                 font-family: 'Roboto';
                 color: #fff;
+                & + .attackContainer {
+                    margin-left: 12px;
+                }
             }
 
             .fastAttacks {
@@ -136,208 +166,37 @@ export const Content = styled.main`
                 margin-top: 24px;
             }
         }
-    }
-    .adress {
-        h3 {
-            margin-top: 16px;
-            font-size: 24px;
-        }
-        div {
-            font-size: 20px;
-            margin-top: 8px;
-            & + div {
-                margin-top: 2px;
-            }
-        }
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
-    @media (max-width: 450px) {
-        h1 {
-            font-size: 26px;
-        }
-    }
+        @media (max-width: 850px) {
+            flex-direction: column;
+            width: 360px;
 
-    .cart {
-        margin-top: 24px;
-        margin-bottom: 30px;
-        background: rgba(206, 212, 207, 0.31);
-        justify-content: center;
-        font-family: 'Roboto';
-        width: 370px;
-        display: flex;
-        flex-direction: column;
-        border-radius: 8px;
-        padding: 20px 20px;
-        @media (max-width: 450px) {
-            width: 350px;
-        }
-
-        header {
-            margin-bottom: 16px;
-            text-align: center;
-            div.total {
-                border-bottom: 1px solid #e5e5e5;
-                margin-bottom: 8px;
-            }
-            h1 {
-                padding-bottom: 16px;
-                font-weight: 700;
-                font-size: 24px;
-            }
-            button.completeOrder {
-                font-family: 'Roboto';
-                margin-top: 16px;
-                margin-bottom: 16px;
-                background: #378d3e;
-                height: 40px;
-                border-radius: 6px;
-                border: 0;
-                color: #fff;
-                padding: 10px;
-                width: 250px;
-                font-weight: 500;
-                transition: background-color 0.2s;
-
-                &:hover {
-                    background: ${shade(0.2, '#378d3e')};
-                }
-            }
-        }
-
-        section.body {
-            flex: 1;
-            justify-content: center;
-
-            div.product {
-                display: flex;
+            .avatarName {
+                align-content: center;
                 align-items: center;
-                margin-bottom: 4px;
-                h2 {
-                    margin-left: 20px;
-                    font-family: 'Roboto';
-                    font-size: 18px;
-                    font-weight: 700;
+                img {
+                    width: 188px;
+                    height: 190px;
                 }
-
-                div.productName {
-                    h2 {
-                        font-size: 16px;
-                        width: 150px;
-                    }
-                    text-align: left;
-                }
-
-                div.quantity {
-                    h2 {
-                        font-size: 16px;
-                        margin-left: 10px;
-                    }
-                    text-align: left;
-                }
-
-                div.price {
-                    h2 {
-                        font-size: 16px;
-                    }
-                    text-align: left;
-                }
-
-                @media (max-width: 450px) {
-                    div.productName {
-                        h2 {
-                            font-size: 15px;
-                            width: 140px;
-                        }
-                    }
-
-                    div.quantity {
-                        h2 {
-                            font-size: 15px;
-                            margin-left: 5px;
-                        }
-                    }
-
-                    div.price {
-                        h2 {
-                            font-size: 15px;
-                            margin-left: 12px;
-                        }
-                    }
-                }
-
-                div.quantityComponent {
-                    margin-right: 20px;
-                    display: flex;
-                    align-items: center;
-                    width: 30px;
-                    height: 22px;
-                    border-radius: 12px;
-
-                    div.separator {
-                        display: flex;
-                        width: 2px;
-                        height: 22px;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 1px;
-                        background: #1e5323;
-                        color: #1e5323;
-                    }
+                footer {
+                    padding: 0px;
 
                     button {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        background: #378d3e;
-                        color: #1e5323;
-
-                        padding: 3px 4px;
-                        border: 0;
-                        transition: 0.1s;
-                    }
-
-                    button.plus {
-                        border-radius: 12px 0px 0px 12px;
-                    }
-                    button.minus {
-                        border-radius: 0px 12px 12px 0px;
+                        margin: 8px;
                     }
                 }
             }
-            @media (max-width: 450px) {
-            }
-        }
-        footer {
-            margin-bottom: 16px;
-            text-align: center;
-            div.total {
-                border-bottom: 1px solid #e5e5e5;
-                margin-bottom: 8px;
-            }
-            h1 {
-                padding-bottom: 16px;
-                font-weight: 700;
-                font-size: 24px;
-            }
-            button.completeOrder {
-                font-family: 'Roboto';
-                margin-top: 16px;
-                margin-bottom: 16px;
-                background: #378d3e;
-                height: 40px;
-                border-radius: 6px;
-                border: 0;
-                color: #fff;
-                padding: 10px;
-                width: 250px;
-                font-weight: 500;
-                transition: background-color 0.2s;
+            .pokemonInfo {
+                padding-top: 8px;
+                margin-left: 0px;
+                .attackContainer {
+                    font-size: 14px;
+                }
+                .fastAttacks {
+                    margin-top: 8px;
+                }
 
-                &:hover {
-                    background: ${shade(0.2, '#378d3e')};
+                .specialAttacks {
+                    margin-top: 8px;
                 }
             }
         }

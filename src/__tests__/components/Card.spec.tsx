@@ -16,44 +16,44 @@ jest.mock('react-redux', () => {
     };
 });
 
-it('should be able to call set Pokemon', () => {
-    const pokemonid = {
-        payload: { pokemonId: '1' },
-        type: 'GO_TO_DETAILS_PAGE',
-    };
-    const pokemon: IPokemon = {
-        id: '1',
-        name: 'Charmeleon',
-        image: 'imageAdress',
-        types: ['Fire', 'Fly'],
-        attacks: {
-            fast: [
-                {
-                    name: 'attack1',
-                    type: 'tipo1',
-                    damage: 10,
-                },
-            ],
-            special: [
-                {
-                    name: 'attack1',
-                    type: 'tipo1',
-                    damage: 10,
-                },
-            ],
-        },
-        __typename: 'qualquer',
-    };
-    const { getByText } = render(<Card pokemon={pokemon} />);
+describe('Card Component', () => {
+    it('should be able to dispacth action selectPokemon', () => {
+        const pokemonid = {
+            payload: { pokemonId: '1' },
+            type: 'SELECT_POKEMON',
+        };
+        const pokemon: IPokemon = {
+            id: '1',
+            name: 'Charmeleon',
+            image: 'imageAdress',
+            types: ['Fire', 'Fly'],
+            attacks: {
+                fast: [
+                    {
+                        name: 'attack1',
+                        type: 'tipo1',
+                        damage: 10,
+                    },
+                ],
+                special: [
+                    {
+                        name: 'attack1',
+                        type: 'tipo1',
+                        damage: 10,
+                    },
+                ],
+            },
+            __typename: 'qualquer',
+        };
+        const { getByText } = render(<Card pokemon={pokemon} />);
 
-    const buttonGoToDetails = getByText('DETALHES / EDITAR');
+        const buttonGoToDetails = getByText('DETALHES / EDITAR');
 
-    fireEvent.click(buttonGoToDetails);
+        fireEvent.click(buttonGoToDetails);
 
-    expect(mockDispatch).toHaveBeenCalledWith(pokemonid);
-});
+        expect(mockDispatch).toHaveBeenCalledWith(pokemonid);
+    });
 
-describe('Input Component', () => {
     it('should be able to render Card', () => {
         const pokemon: IPokemon = {
             id: '1',

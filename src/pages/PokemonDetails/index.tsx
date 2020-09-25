@@ -6,7 +6,7 @@ import logoImg from '../../assets/pokemon-logo.png';
 import { IState } from '../../store';
 import { IPokemon } from '../../store/modules/pokemonReducer/types';
 import ModalEditPokemon from '../../components/ModalEditPokemon';
-import { editPokemon } from '../../store/modules/pokemonReducer/actions';
+import { updatePokemon } from '../../store/modules/pokemonReducer/actions';
 
 interface IProduct {
     id: string;
@@ -26,7 +26,7 @@ const PokemonDetails: React.FC = () => {
 
     async function handleUpdatePokemon(pokemon: IPokemon): Promise<void> {
         pokemon.id = selectedPokemon.id;
-        dispatch(editPokemon(pokemon));
+        dispatch(updatePokemon(pokemon));
     }
     function toggleEditModal(): void {
         setEditModalOpen(!editModalOpen);
@@ -39,6 +39,13 @@ const PokemonDetails: React.FC = () => {
                     <Link to="/">
                         <img src={logoImg} alt="Pokemon" />
                     </Link>
+                    <div className="back">
+                        <Link to="/">
+                            <button type="button" className="voltar">
+                                VOLTAR
+                            </button>
+                        </Link>
+                    </div>
                 </HeaderContent>
             </Header>
             <ModalEditPokemon

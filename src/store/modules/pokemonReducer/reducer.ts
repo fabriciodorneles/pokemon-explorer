@@ -34,7 +34,7 @@ const pokemonReducer: Reducer<IPokemonState> = (
                 draft.currentPokemonList = pokemonList;
                 break;
             }
-            case ActionTypes.goToDetailsPage: {
+            case ActionTypes.selectPokemon: {
                 const { pokemonId } = action.payload;
                 const selectedPokemon = state.currentPokemonList.find(
                     (pokemon) => pokemon.id === pokemonId,
@@ -43,7 +43,7 @@ const pokemonReducer: Reducer<IPokemonState> = (
                 draft.currentPokemon = selectedPokemon;
                 break;
             }
-            case ActionTypes.editPokemon: {
+            case ActionTypes.updatePokemon: {
                 const { pokemon } = action.payload;
                 const updatedPokemonList = state.totalPokemonList.map(
                     (pokemonItem) => {
@@ -104,9 +104,6 @@ const pokemonReducer: Reducer<IPokemonState> = (
                         break;
                     }
                 }
-                // draft.currentPokemon = pokemon;
-                // draft.totalPokemonList = updatedPokemonList;
-                // draft.currentPokemonList = updatedPokemonList;
                 break;
             }
             default: {

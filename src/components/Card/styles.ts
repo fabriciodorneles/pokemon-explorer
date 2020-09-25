@@ -9,9 +9,9 @@ export const Container = styled.div`
     height: 340px;
     display: flex;
     flex-direction: column;
-    @media (max-width: 450px) {
+    @media (max-width: 470px) {
         width: 130px;
-        height: 280px;
+        height: 220px;
     }
 
     header {
@@ -31,7 +31,7 @@ export const Container = styled.div`
             padding: 10px;
             background: #fff;
         }
-        @media (max-width: 450px) {
+        @media (max-width: 470px) {
             height: 120px;
             img {
                 width: 115px;
@@ -90,7 +90,7 @@ export const Container = styled.div`
                 padding: 0px 8px;
             }
         }
-        @media (max-width: 450px) {
+        @media (max-width: 470px) {
             h2 {
                 font-size: 16px;
             }
@@ -144,7 +144,7 @@ export const Container = styled.div`
                     margin-left: 8px;
                 }
 
-                @media (max-width: 450px) {
+                @media (max-width: 470px) {
                     flex-direction: column;
                     p {
                         font-size: 8px;

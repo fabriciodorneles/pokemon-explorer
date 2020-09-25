@@ -36,6 +36,16 @@ export const Form = styled(Unform)`
             margin: 0 auto;
         }
     }
+    @media (max-width: 470px) {
+        flex-direction: column;
+
+        button {
+            margin-left: 0px;
+            margin-top: 8px;
+            height: 30px;
+            border: 0;
+        }
+    }
 `;
 
 export const Container = styled.div`
@@ -90,6 +100,7 @@ export const MenuBar = styled.div`
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    flex-direction: column;
 
     @media (max-width: 580px) {
         height: 90px;
@@ -97,8 +108,8 @@ export const MenuBar = styled.div`
             text-align: center;
         }
     }
-    @media (max-width: 450px) {
-        height: 80px;
+    @media (max-width: 470px) {
+        height: 130px;
         h1 {
             max-width: 300px;
             text-align: center;
@@ -115,6 +126,9 @@ export const Content = styled.main`
     align-items: center;
     justify-content: center;
     flex: 1;
+    @media (max-width: 450px) {
+        margin-top: 70px;
+    }
 
     .addProduct {
         margin-top: 16px;
@@ -125,7 +139,6 @@ export const Content = styled.main`
         border: 0;
         background: #39b100;
         display: flex;
-        flex-direction: row;
         align-items: center;
 
         .text {
@@ -182,7 +195,7 @@ export const ProductsContainer = styled.div`
         grid-gap: 12px;
     }
 
-    @media (max-width: 450px) {
+    @media (max-width: 470px) {
         width: 270px;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 6px;

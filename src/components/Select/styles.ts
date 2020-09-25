@@ -14,9 +14,6 @@ export const ContainerSelect = styled.div`
 
     & + div {
         margin-top: 0px;
-        @media (max-width: 450px) {
-            margin-top: 12px;
-        }
     }
 
     h1 {
@@ -34,6 +31,14 @@ export const ContainerSelect = styled.div`
 
         &::placeholder {
             color: #b7b7cc;
+        }
+    }
+    @media (max-width: 470px) {
+        margin-top: 8px;
+        height: 30px;
+        margin-left: 0px;
+        & + div {
+            margin-top: 12px;
         }
     }
 `;
