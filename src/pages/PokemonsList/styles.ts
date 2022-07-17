@@ -67,7 +67,8 @@ export const HeaderContent = styled.div`
     display: flex;
     flex: 1;
     flex-direction: column;
-    align-items: center;
+    align-content: flex-end;
+    align-items: ;
     flex: 1 0 auto;
     justify-content: center;
     @media (max-width: 1260px) {
